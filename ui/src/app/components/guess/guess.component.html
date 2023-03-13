@@ -1,0 +1,13 @@
+<form (ngSubmit)="onGuessSubmit()" #guessForm="ngForm" *ngIf="currentGame.inProgress">
+  <div class="form-group d-inline-block me-2">
+    <label for="guess">Enter <strong>Guess</strong>:</label>
+    <input id="guess" (blur)="hideError()" type="text" class="form-control" required ngModel name="guess" #guess="ngModel" />
+    <div #error [hidden]="guess.valid || guess.pristine"
+    class="alert alert-danger">
+    <div *ngIf="guess.errors && guess.errors['invalid-number']">Guess must consists of exactly 4 digits</div>
+    <div *ngIf="guess.errors && guess.errors['redundancy']">Guess should have no repeats</div>
+    <div *ngIf="guess.errors && !guess.errors['invalid-number'] && !guess.errors['redundancy'] && !guess.valid">Guess is required</div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success" [disabled]="!guessForm.form.valid">Submit</button>
+</form>

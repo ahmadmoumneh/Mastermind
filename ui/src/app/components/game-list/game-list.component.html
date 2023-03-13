@@ -1,0 +1,8 @@
+<div class="games">
+  <h1>Games</h1>
+    <div class="tr" *ngFor="let game of games" (click)="chooseGame(game.id)">
+      <div class="td">Game <strong>ID</strong>: <span class="id">{{ game.id }}</span></div>
+      <div class="td"><span *ngIf="game.inProgress" class="in-progress">In Progress</span><span *ngIf="!game.inProgress" class="finished">Finsihed</span></div>
+      <div class="td" [ngClass]="{'hidden-answer': game.inProgress}"><span *ngIf="!game.inProgress"><strong>Answer</strong>: <span class="answer">{{ game.answer }}</span></span></div>
+    </div>
+</div>

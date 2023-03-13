@@ -1,0 +1,12 @@
+<div class="rounds">
+  <div *ngFor="let round of rounds" class="round">
+    <span class="guess">{{ round.guess }}</span> 
+    <div class="exacts">
+      <div *ngFor="let i of (round.guessResult | guessResult).exacts " class="disk exact"></div>
+    </div>
+    <div class="partials">
+      <div *ngFor="let i of (round.guessResult | guessResult).partials" class="partials" class="disk partial"></div>
+    </div>
+    <div class="datetime"><span>{{ round.guessTime | date:"yyyy-MM-dd" }}</span>&nbsp;<span class="ms-1"><strong>{{ round.guessTime | date:"h:mm:ss" }}</strong></span><span class="ms-1">{{ round.guessTime | date:"a" }}</span></div>
+  </div>
+</div>

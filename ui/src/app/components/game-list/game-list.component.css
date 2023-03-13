@@ -1,0 +1,39 @@
+.answer {
+  color: blue;
+}
+
+.hidden-answer {
+  background: linear-gradient(45deg, darkblue 20%, transparent);
+}
+
+h1 {
+  font-size: 60px;
+  padding: 10px;
+  color: midnightblue;
+  text-align: center;
+}
+
+.td { 
+  display: inline-block;
+  text-align: center;
+  padding: 8px;
+  width: 140px;
+  font-size: 12px;
+  transition: all ease 1s;
+}
+
+.tr {
+  display: flex;
+  background: linear-gradient(-135deg, transparent 30%,  rgb(243, 243, 225));
+  border-bottom: thin solid lightgray;
+  justify-content: center;
+}
+
+.tr:hover {
+  background-color: palegoldenrod;
+  cursor: pointer;
+}
+
+.games {
+  padding: 20px 0;
+}

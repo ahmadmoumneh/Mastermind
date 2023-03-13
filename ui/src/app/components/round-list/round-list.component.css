@@ -1,0 +1,56 @@
+.round {
+  display: flex;
+  border-bottom: thin solid lightgray;
+  justify-content: center;
+  background: linear-gradient(-135deg, transparent 30%,  rgb(243, 243, 225));
+  padding: 5px 10px;
+}
+
+.guess {
+  font-size: 16px;
+  margin-right: 10px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.exacts, .partials {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  height: 24px;
+  width: 24px;
+  margin: auto 0;
+}
+
+.disk {
+  display: inline-flex;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  border: thin solid grey;
+  box-shadow: 1px 1px black;
+}
+
+.exact {
+  background: linear-gradient(45deg, darkgreen, lightgreen);
+}
+
+.partial {
+  background: linear-gradient(45deg, darkgoldenrod, lightyellow);
+}
+
+.datetime {
+  font-size: 12px;
+  color: grey;
+  display: inline-flex;
+  justify-content: center;
+  margin-left: 10px;
+  align-items: center;
+  min-width: 160px
+}
+
+.rounds {
+  margin: 30px 0;
+}

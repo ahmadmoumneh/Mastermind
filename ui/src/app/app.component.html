@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <form (ngSubmit)="onGameIdSubmit(gameId.value)" #gameForm="ngForm" class="get-game">
+        <div class="form-group d-inline-block me-2 text-left">
+          <label for="gameId">Enter Game <strong>ID</strong>:</label>
+          <input id="gameId" (blur)="hideError()" type="number" class="form-control" required ngModel name="gameId" #gameId="ngModel" />
+          <div #error [hidden]="gameId.pristine || gameId.valid"
+                class="alert alert-danger">
+              <div *ngIf="gameId.errors && gameId.errors['not-found']">Game ID not found</div>
+              <div *ngIf="gameId.errors && !gameId.errors['not-found'] && !gameId.pristine">Game ID is required</div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!gameForm.form.valid">Submit</button>
+        <button type="button" class="btn btn-primary ms-1" (click)="newGame()">New Game</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <app-game-list class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 offset-lg-0 offset-lg-2 col-lg-4" [(games)]="games" (currentGame)="onGameIdSubmit($event)"></app-game-list>
+    <div *ngIf="currentGame" class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 offset-lg-0 col-lg-4">
+      <div class="current-game">
+        <h2>Your Game:</h2>
+        <div class="row">
+          <div class="col-xs-3 current-game-id">Game <strong>ID</strong>: <span class="id">{{ currentGame.id }}</span></div>
+          <div class="col-xs-9 current-game-progress">Game <span class="in-progress" *ngIf="currentGame.inProgress">in Progress</span><span class="finished" *ngIf="!currentGame.inProgress">Finished</span></div>
+          <app-round-list [rounds]="rounds" [currentGame]="currentGame"></app-round-list>
+          <app-guess [(games)]="games" [(rounds)]="rounds" [(currentGame)]="currentGame"></app-guess>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

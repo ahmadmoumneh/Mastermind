@@ -1,0 +1,40 @@
+@import url('../node_modules/bootstrap/dist/css/bootstrap.css');
+
+body {
+  background: linear-gradient(45deg, lightyellow, white);
+  user-select: none;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+input {
+  text-align: center;
+}
+
+label {
+  font-size: 16px;
+}
+
+.in-progress {
+  color: darkred;
+  background-color: rgb(251, 251, 181);
+  padding: 5px;
+  border-radius: 5%;
+}
+
+.finished {
+  color: green;
+  background-color: rgb(210, 244, 210);
+  padding: 5px;
+  border-radius: 5%;
+}
+
+.id {
+  color:red;
+}
+
+.alert {
+  position: absolute;
+  z-index: 1;
+  transition: all ease 1s;
+}

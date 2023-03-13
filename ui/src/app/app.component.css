@@ -1,0 +1,36 @@
+.current-game, .dashboard{
+  text-align: center;
+}
+
+.current-game {
+  padding: 20px 0;
+}
+
+button {
+  vertical-align: initial;
+}
+
+.get-game {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.current-game-id {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.current-game-progress {
+  font-size: 16px;
+  transition: all ease 1s;
+}
+
+h2 {
+  font-size: 40px;
+  color: midnightblue;
+}
+
+#gameId {
+  width: 120px;
+  margin-bottom: 0.5rem;
+}
